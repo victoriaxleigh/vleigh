@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pediatric Complex Care Matching</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>AI Caregiver Matching for Complex Pediatric Needs</h1>
+        <p>
+          Enter a patient's clinical requirements and get ranked caregiver matches with
+          explainable scoring.
+        </p>
+      </header>
+
+      <section class="card">
+        <form method="post" class="grid">
+          <label>
+            Required specialties (comma-separated)
+            <input
+              name="specialties"
+              placeholder="Tracheostomy, Seizure Disorders, G-Tube"
+            />
+          </label>
+
+          <label>
+            Required certifications (comma-separated)
+            <input name="certifications" placeholder="RN, PALS" />
+          </label>
+
+          <label>
+            Preferred language
+            <input name="language" placeholder="Spanish" />
+          </label>
+
+          <label>
+            Patient acuity level (1-5)
+            <input name="acuity_level" type="number" min="1" max="5" value="4" />
+          </label>
+
+          <label class="checkbox">
+            <input type="checkbox" name="night_shift" />
+            Needs overnight care
+          </label>
+
+          <button type="submit">Find Best Matches</button>
+        </form>
+      </section>
+
+      {% if matches %}
+      <section>
+        <h2>Top Matches</h2>
+        <div class="results">
+          {% for match in matches %}
+          <article class="match">
+            <div class="match-header">
+              <h3>{{ match.caregiver.name }}</h3>
+              <span class="score">{{ match.score }}% match</span>
+            </div>
+            <p>
+              {{ match.caregiver.years_experience }} years experience • Acuity
+              {{ match.caregiver.acuity_level }}/5 • {{ match.caregiver.location }}
+            </p>
+            <p><strong>Certifications:</strong> {{ match.caregiver.certifications | join(', ') }}</p>
+            <p><strong>Specialties:</strong> {{ match.caregiver.specialties | join(', ') }}</p>
+            <p><strong>Languages:</strong> {{ match.caregiver.languages | join(', ') }}</p>
+            <p><strong>Why this match:</strong> {{ match.reasons | join(', ') }}</p>
+          </article>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+    </main>
+  </body>
+</html>
