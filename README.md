@@ -25,6 +25,19 @@ flask --app app run
 
 Open `http://127.0.0.1:5000`.
 
+
+## Instant preview (no dependencies)
+
+If you want a quick visual preview without installing Flask dependencies:
+
+```bash
+python -m http.server 8000
+```
+
+Then open:
+- `http://127.0.0.1:8000/preview.html` (static demo preview)
+- `http://127.0.0.1:8000/templates/index.html` (raw template only)
+
 ## Tests
 
 ```bash

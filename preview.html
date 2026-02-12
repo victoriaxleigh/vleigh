@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pediatric Caregiver Matching Preview</title>
+    <link rel="stylesheet" href="static/styles.css" />
+    <style>
+      .banner {
+        background: #ecfeff;
+        border: 1px solid #a5f3fc;
+        color: #0f172a;
+        padding: 0.75rem 1rem;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+      }
+      .muted { color: #475569; }
+      .demo-input {
+        background: #f8fafc;
+        border: 1px dashed #cbd5e1;
+        border-radius: 10px;
+        padding: 0.75rem;
+        margin: 0.5rem 0 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>AI Caregiver Matching for Complex Pediatric Needs</h1>
+        <p class="muted">No-dependency preview page with realistic sample results.</p>
+      </header>
+
+      <section class="banner">
+        <strong>Preview mode:</strong> This page is static so teams can quickly review UI without
+        installing Flask/Python packages.
+      </section>
+
+      <section class="card">
+        <h2>Sample Patient Intake</h2>
+        <div class="demo-input">
+          <p><strong>Specialties:</strong> Tracheostomy, Seizure Disorders, G-Tube</p>
+          <p><strong>Certifications:</strong> RN, PALS</p>
+          <p><strong>Preferred language:</strong> Spanish</p>
+          <p><strong>Acuity:</strong> 5/5</p>
+          <p><strong>Overnight care:</strong> Yes</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Sample Ranked Matches</h2>
+        <div class="results">
+          <article class="match">
+            <div class="match-header">
+              <h3>Alicia M.</h3>
+              <span class="score">100% match</span>
+            </div>
+            <p>11 years experience • Acuity 5/5 • Chicago, IL</p>
+            <p><strong>Certifications:</strong> RN, PALS, Ventilator Care</p>
+            <p><strong>Specialties:</strong> Tracheostomy, Seizure Disorders, G-Tube</p>
+            <p><strong>Languages:</strong> English, Spanish</p>
+            <p><strong>Why this match:</strong> 3 specialty match(es), 2 certification match(es), speaks Spanish, night-shift availability</p>
+          </article>
+
+          <article class="match">
+            <div class="match-header">
+              <h3>Nia T.</h3>
+              <span class="score">90% match</span>
+            </div>
+            <p>14 years experience • Acuity 5/5 • Oak Park, IL</p>
+            <p><strong>Certifications:</strong> RN, PALS, Pediatric Neuro Care</p>
+            <p><strong>Specialties:</strong> Seizure Disorders, Medication Complexity, Tracheostomy</p>
+            <p><strong>Languages:</strong> English, French</p>
+            <p><strong>Why this match:</strong> 2 specialty match(es), 2 certification match(es), night-shift availability</p>
+          </article>
+
+          <article class="match">
+            <div class="match-header">
+              <h3>Daniel R.</h3>
+              <span class="score">56.7% match</span>
+            </div>
+            <p>6 years experience • Acuity 4/5 • Evanston, IL</p>
+            <p><strong>Certifications:</strong> LPN, CPR, Home Vent Support</p>
+            <p><strong>Specialties:</strong> Respiratory Support, G-Tube, Mobility Support</p>
+            <p><strong>Languages:</strong> English</p>
+            <p><strong>Why this match:</strong> 1 specialty match(es), acuity support level 4/5</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
